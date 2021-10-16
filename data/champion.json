@@ -12,7 +12,7 @@
     "name": "갈리오",
     "engName": "Galio",
     "type": "MidType SupportType",
-    "info": "info",
+    "info": "<h2>info</h2>",
     "image": "https://opgg-static.akamaized.net/images/lol/champion/Galio.png"
   },
   {
