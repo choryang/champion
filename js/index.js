@@ -1,4 +1,11 @@
 $(function () {
+  function printInfo() {
+    $(".champion p").on("click", function () {
+      var name = $(this).attr("id");
+      var result = champion.filter((champion) => champion.name === name);
+      $("#champion-info").html(result[0].info);
+    });
+  }
   var champion = [];
   $.getJSON(
     "https://choryang.github.io/champion/data/champion.json",
@@ -37,11 +44,19 @@ $(function () {
         `<p id=${champion.name}><span class="champion-name">${champion.name}</span><img class="champion-img" src=${champion.image} alt="profile"/><p>`
       );
     });
-    $(".champion p").on("click", function () {
-      var name = $(this).attr("id");
-      var result = champion.filter((champion) => champion.name === name);
-      $("#champion-info").html(result[0].info);
+    printInfo();
+  });
+
+  $(".type img").click(function () {
+    $(".champion").empty();
+    var type = $(this).attr("id");
+    var result = champion.filter((champion) => champion.type.includes(type));
+    result.map((champion) => {
+      return $(".champion").append(
+        `<p id=${champion.name}><span class="champion-name">${champion.name}</span><img class="champion-img" src=${champion.image} alt="profile"/><p>`
+      );
     });
+    printInfo();
   });
 
   $(".edit").click(function () {
