@@ -1,8 +1,8 @@
 .main {
   background: #ffffff;
   width: calc(100% - 200px);
-  height: 550px;
-  margin: 50px auto;
+  height: 500px;
+  margin: 75px auto;
   position: absolute;
   top: 0px;
   left: 100px;
@@ -66,31 +66,4 @@
   overflow: scroll;
   border: 3px solid #000000;
   padding: 20px;
-}
-
-.champion-container #champion-info-edit {
-  display: none;
-  width: 65%;
-  height: 360px;
-  overflow: scroll;
-  border: 3px solid #000000;
-}
-
-.btn-area {
-  width: 95%;
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px auto;
-}
-
-.btn-area button {
-  border: 1px solid #000000;
-  border-radius: 4px;
-  padding: 10px;
-  background: #dddddd;
-  cursor: pointer;
-}
-
-.btn-area .edit {
-  margin-right: 10px;
 }
