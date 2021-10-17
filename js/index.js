@@ -64,6 +64,7 @@ $(function () {
       image: result[0].image,
     };
     champion.splice(idx, 1, newInfo);
+    $("#champion-info").html(edited);
     $("#champion-info").css("display", "block");
     $("#champion-info-edit").css("display", "none");
   });
