@@ -7,6 +7,7 @@ $(function () {
     });
   }
   var champion = [];
+
   $.getJSON(
     "https://choryang.github.io/champion/data/champion.json",
     function (data) {
@@ -42,12 +43,22 @@ $(function () {
   $(".type img").click(function () {
     $(".champion").empty();
     var type = $(this).attr("id");
-    var result = champion.filter((champion) => champion.type.includes(type));
-    result.map((champion) => {
-      return $(".champion").append(
-        `<p id=${champion.name}><span class="champion-name">${champion.name}</span><img class="champion-img" src=${champion.image} alt="profile"/><p>`
-      );
-    });
+    if ($(this).data("click") === false) {
+      $(this).data("click", true);
+      var result = champion.filter((champion) => champion.type.includes(type));
+      result.map((champion) => {
+        return $(".champion").append(
+          `<p id=${champion.name}><span class="champion-name">${champion.name}</span><img class="champion-img" src=${champion.image} alt="profile"/><p>`
+        );
+      });
+    } else if ($(this).data("click") === true) {
+      $(this).data("click", false);
+      champion.map((champion) => {
+        return $(".champion").append(
+          `<p id=${champion.name}><span class="champion-name">${champion.name}</span><img class="champion-img" src=${champion.image} alt="profile"/><p>`
+        );
+      });
+    }
     printInfo();
   });
 });
