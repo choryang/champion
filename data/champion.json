@@ -4,7 +4,7 @@
     "name": "가렌",
     "engName": "Garen",
     "type": "TopType MidType",
-    "info": "<h1>info<h1>",
+    "info": "가렌<a href='https://www.naver.com'><button>네이버</button></a>",
     "image": "https://opgg-static.akamaized.net/images/lol/champion/Garen.png"
   },
   {
